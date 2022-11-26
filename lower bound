@@ -23,11 +23,12 @@ int main() {
         cin>>y;
         p= find(v.begin(),v.end(),y);
         l=lower_bound(v.begin(),v.end(),y);
-        if(p-v.begin()>=0){
-            cout<<"yes"<<" "<<p-v.begin()<<endl;
+      
+        if(p!=v.end()){
+            cout<<"Yes"<<" "<<p-v.begin()+1<<endl;
         }
         else{
-            cout<<"No"<<l-v.begin()+1<<endl;
+            cout<<"No"<<" "<<l-v.begin()+1<<endl;
         }
     }
     
