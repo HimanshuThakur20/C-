@@ -1,0 +1,64 @@
+/*
+You are appointed as the assistant to a teacher in a school and she is correcting the answer sheets of the students.Each student can have multiple answer sheets.So the teacher has
+
+queries:
+
+:Add the marks to the student whose name is
+
+.
+
+: Erase the marks of the students whose name is
+
+.
+
+: Print the marks of the students whose name is . (If didn't get any marks print .)*/
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int q,y;
+    string x;
+    cin>>q;
+    map<string,int> m;
+    // map<string,int> :: iterator it;
+    for(int i=0;i<q;i++){
+        int type;
+        cin>>type;
+        switch(type){
+            case 1:
+                    
+                    cin>>x>>y;
+                    if(m.find(x)==m.end())
+                    m.insert(make_pair(x,y));
+                    else
+                    m[x]+= y;
+            break;
+            case 2:
+                    cin>>x;
+                    m.erase(x);
+            break;
+            case 3:
+                    cin>>x;
+                    // it = m.find(x);
+                    if(m.find(x)!=m.end()){
+                        cout<<m.find(x)->second<<endl;
+                    }
+                    else
+                    cout<<"0\n";
+            break;
+        }
+    }
+    return 0;
+}
+
+
+
